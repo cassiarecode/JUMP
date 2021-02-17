@@ -178,9 +178,34 @@ a[aria-expanded="true"] {
     font-size: 1.9em;
 }
 
+.container ul li a{
+    color: #177681 !important;
+    font-size: 1em;
+}
+
+.container ul li a.active{
+    background-color: #39aebb5d !important;
+}
+
+.tab-pane .container h3{
+    color: #177681;
+}
+
+.card .card-title{
+    font-size: 0.9rem;
+}
+
+.card .card-text{
+    font-size: 0.8rem;
+}
+
 /* -----------------
     MEDIAQUERIES
 -------------------- */
+
+@media (max-width: 991.98px) {
+
+}
 
 @media (max-width: 768px) {
     #sidebar{
@@ -223,5 +248,10 @@ a[aria-expanded="true"] {
 
     #sidebar.active .copy{
         display: none;
+    }
+
+    .container ul li a{
+        color: #177681 !important;
+        font-size: 0.7em;
     }
 }
