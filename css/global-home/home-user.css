@@ -19,7 +19,7 @@ span {
 }
 
 .line{
-    width: 100%;
+    width: 80%;
     margin: 1.1em 0;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
@@ -34,6 +34,10 @@ span {
 }
 
 #sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     padding-top: 1em;
     min-width: 80px;
     max-width: 80px;
@@ -72,6 +76,22 @@ span {
 
 #sidebar.active .sidebar-header .logo{
     display: block;
+}
+
+#sidebar.active .copy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3em 0 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#sidebar.active .copy .copycopy{
+    font-size: 0.7em;
+}
+
+#sidebar.active .copy .recode{
+    font-size: 0.6rem;
 }
 
 #sidebar .sidebar-header .logo-responsive {
@@ -127,6 +147,10 @@ span {
     display: none;
 }
 
+#sidebar .copy{
+    display: none;
+}
+
 #sidebar ul li a:hover {
     color: #177681;
     background: #97dce4;
@@ -159,43 +183,45 @@ a[aria-expanded="true"] {
 -------------------- */
 
 @media (max-width: 768px) {
-    #sidebar {
-        min-width: 80px;
-        max-width: 80px;
-        text-align: center;
-        margin-left: -80px !important;
+    #sidebar{
+        display: none;
+        transition: all 0.3s;
     }
 
-    #sidebar.active {
-        margin-left: 0 !important;
+    #sidebar.active{
+        display: block;
+        padding-top: 1em;
+        min-width: 80px;
+        max-width: 80px;
+        background-image: linear-gradient(to bottom, #177681, #39aebb, #2a8994, #33929d, #3b9ca7);
+        color: #fff;
+        box-shadow: 1px 2px 20px hsla(186, 76%, 19%, 0.452);
     }
- 
+
+    #sidebar.active .sidebar-header .container-user p{
+        display: none;
+    }
+
     #sidebar.active .sidebar-header .logo-responsive {
         display: block;
     }
+
     #sidebar.active .sidebar-header .logo {
         display: none;
     }
-    #sidebar ul li a {
-        padding: 20px 10px;
-    }
-    #sidebar ul li a span {
-        font-size: 0.85em;
-    }
-    #sidebar ul li a i {
-        margin-right: 0;
+
+    #sidebar.active ul li a {
+        font-size: 1.4em;
+        padding: 20px;
+        text-align: center;
         display: block;
     }
-    #sidebar ul ul a {
-        padding: 10px !important;
+
+    #sidebar.active ul li a span{
+        display: none;
     }
-    #sidebar ul li a i {
-        font-size: 1.3em;
-    }
-    #sidebar {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
+
+    #sidebar.active .copy{
         display: none;
     }
 }
